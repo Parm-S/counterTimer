@@ -8,7 +8,7 @@ let remainingTime;
 function countdown(){
     let currentDate = new Date();
     
-    let eventDate = new Date('August 22, 2021 11:00:00');
+    let eventDate = new Date('August 26, 2021 11:00:00');
     
     let currentTime = currentDate.getTime();
     console.log(currentTime);
