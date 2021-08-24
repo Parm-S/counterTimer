@@ -8,7 +8,7 @@ let remainingTime;
 function countdown(){
     let currentDate = new Date();
     
-    let eventDate = new Date('November 22, 2021 11:00:00');
+    let eventDate = new Date('August 22, 2021 11:00:00');
     
     let currentTime = currentDate.getTime();
     console.log(currentTime);
@@ -19,11 +19,16 @@ function countdown(){
     remainingTime =  eventTime - currentTime;
     console.log(remainingTime);
 
-    setTimeLeft();
+    setTimeLeft(); 
 
     let interval = setInterval(()=>{
         if(remainingTime < 0){
             clearInterval(interval);
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("timer").style.backgroundColor =  "#ecd7ed12";
+            document.getElementById("timer").style.boxShadow = "20px 20px 13px 6px #00000057";
+            document.getElementById("timer").innerHTML = "The Event started on "+eventDate.toLocaleDateString("hi-IN",options);
+            // console.log(eventDate.toLocaleDateString("hi-IN",options));
         }
         countTime();
     },1000);
